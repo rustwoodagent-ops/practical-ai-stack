@@ -1,57 +1,109 @@
 import Link from "next/link";
 
-export default function Footer() {
-  const currentYear = new Date().getFullYear();
+const exploreLinks = [
+  { label: "Best Tools", href: "/best-tools" },
+  { label: "Comparisons", href: "/comparisons" },
+  { label: "Reviews", href: "/reviews" },
+  { label: "Categories", href: "/categories" },
+  { label: "Start Here", href: "/start-here" },
+];
 
+const categoryLinks = [
+  { label: "Writing", href: "/categories/writing" },
+  { label: "Design", href: "/categories/design" },
+  { label: "Automation", href: "/categories/automation" },
+  { label: "Notes", href: "/categories/notes" },
+  { label: "Newsletters", href: "/categories/email" },
+  { label: "Productivity", href: "/categories/workflow" },
+];
+
+const companyLinks = [
+  { label: "About", href: "/about" },
+  { label: "Affiliate Disclosure", href: "/affiliate-disclosure" },
+  { label: "Contact", href: "/contact" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Newsletter", href: "/newsletter" },
+];
+
+export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0b] border-t border-[#27272a] py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div className="md:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">P</span>
-              </div>
-              <span className="text-xl font-bold text-white">Practical AI</span>
+    <footer className="border-t border-slate-800 bg-slate-950">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <Link href="/" className="text-lg font-semibold text-white">
+              Practical AI Stack
             </Link>
-            <p className="text-[#71717a] text-sm max-w-sm">
-              Curated AI tool reviews and comparisons for creators, solopreneurs, 
-              and productivity operators. No fluff, no sponsored bias.
+            <p className="mt-4 text-sm leading-relaxed text-slate-400">
+              Honest reviews, practical comparisons, and useful AI workflows for creators, 
+              solo operators, and small business.
             </p>
           </div>
 
+          {/* Explore */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Categories</h4>
-            <ul className="space-y-2">
-              <li><Link href="/writing" className="text-[#71717a] hover:text-green-400 text-sm transition-colors">AI Writing</Link></li>
-              <li><Link href="/image-video" className="text-[#71717a] hover:text-green-400 text-sm transition-colors">Image & Video</Link></li>
-              <li><Link href="/workflow" className="text-[#71717a] hover:text-green-400 text-sm transition-colors">Workflow</Link></li>
-              <li><Link href="/notes" className="text-[#71717a] hover:text-green-400 text-sm transition-colors">Notes & PKM</Link></li>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-300">
+              Explore
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {exploreLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-slate-400 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Categories */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Connect</h4>
-            <ul className="space-y-2">
-              <li><a href="/newsletter" className="text-[#71717a] hover:text-green-400 text-sm transition-colors">Newsletter</a></li>
-              <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#71717a] hover:text-green-400 text-sm transition-colors">Twitter/X</a></li>
-              <li><a href="#" className="text-[#71717a] hover:text-green-400 text-sm transition-colors">Contact</a></li>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-300">
+              Categories
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {categoryLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-slate-400 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-300">
+              Company
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {companyLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-slate-400 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-[#27272a] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#71717a] text-sm">
-            © {currentYear} Practical AI Stack. All rights reserved.
+        {/* Bottom */}
+        <div className="mt-12 border-t border-slate-800 pt-8">
+          <p className="text-center text-sm text-slate-500">
+            © 2026 Practical AI Stack. Built for practical operators.
           </p>
-          <div className="flex items-center space-x-6 text-sm">
-            <Link href="/affiliate-disclosure" className="text-[#71717a] hover:text-green-400 transition-colors">
-              Affiliate Disclosure
-            </Link>
-            <Link href="/privacy" className="text-[#71717a] hover:text-green-400 transition-colors">
-              Privacy
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

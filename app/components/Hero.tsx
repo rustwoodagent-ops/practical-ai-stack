@@ -1,69 +1,74 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-16">
-      <div className="absolute inset-0 bg-[#0a0a0b]">
-        <div className="absolute inset-0 bg-gradient-to-b from-green-500/10 via-transparent to-transparent" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-500/20 rounded-full blur-[120px] opacity-30" />
-      </div>
-
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm mb-8">
-            <span className="w-2 h-2 rounded-full bg-green-400 mr-2 animate-pulse" />
-            Updated weekly with tested tools
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-            AI Tools That Actually{" "}
-            <span className="gradient-text">Work</span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-[#a1a1aa] max-w-2xl mx-auto mb-10 leading-relaxed">
-            Curated reviews and comparisons for creators, solopreneurs, and productivity operators. 
-            No fluff. No sponsored bias. Just tools that save you time and make you money.
+    <section className="relative overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-indigo-950/20 via-slate-950 to-slate-950" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.15),transparent_50%)]" />
+      
+      <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
+        <div className="mx-auto max-w-4xl text-center">
+          {/* Eyebrow */}
+          <p className="mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-indigo-400">
+            Honest AI tool reviews for creators, solo operators, and small business
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <a href="#categories" className="inline-flex items-center px-8 py-4 rounded-lg bg-green-600 hover:bg-green-500 text-white font-semibold text-lg transition-all hover:scale-105">
-              Browse Tools
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </a>
-            <a href="/newsletter" className="inline-flex items-center px-8 py-4 rounded-lg bg-[#18181b] hover:bg-[#27272a] text-white font-semibold text-lg transition-all border border-[#27272a]">
-              Get Weekly Picks
-            </a>
+          {/* Headline */}
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+            Find the Best AI Tools{" "}
+            <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
+              Without Wasting Time or Money
+            </span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-400 sm:text-xl">
+            Practical AI Stack helps you choose the right AI tools faster with honest reviews, 
+            sharp comparisons, and real-world workflows built for people who actually need useful results.
+          </p>
+
+          {/* CTAs */}
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/best-tools"
+              className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-indigo-500 hover:shadow-xl hover:shadow-indigo-500/25 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-950"
+            >
+              Explore Best Tools
+            </Link>
+            <Link
+              href="/start-here"
+              className="inline-flex items-center justify-center rounded-xl border border-slate-700 bg-slate-900/50 px-8 py-4 text-base font-semibold text-white transition-all hover:border-slate-600 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-slate-950"
+            >
+              Start Here
+            </Link>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-[#71717a]">
-            <span className="flex items-center">
-              <svg className="w-4 h-4 mr-2 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+          {/* Trust strip */}
+          <p className="mt-10 text-sm font-medium text-slate-500">
+            No hype. No bloated lists. No fluff. Just practical tools worth your time.
+          </p>
+
+          {/* Mini proof row */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400">
+            <div className="flex items-center gap-2">
+              <svg className="h-5 w-5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              50+ tools reviewed
-            </span>
-            <span className="flex items-center">
-              <svg className="w-4 h-4 mr-2 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              <span>Real comparisons</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="h-5 w-5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              Real testing, real workflows
-            </span>
-            <span className="flex items-center">
-              <svg className="w-4 h-4 mr-2 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              <span>Practical workflows</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="h-5 w-5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              Affiliate transparency
-            </span>
+              <span>Affiliate-transparent reviews</span>
+            </div>
           </div>
         </div>
       </div>

@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0b;
-  --foreground: #fafafa;
-  --accent: #22c55e;
-  --accent-dim: #16a34a;
-  --muted: #a1a1aa;
-  --card: #18181b;
-  --border: #27272a;
+  --background: #020617;
+  --foreground: #f8fafc;
+  --accent: #6366f1;
+  --accent-dim: #4f46e5;
+  --muted: #94a3b8;
+  --card: #0f172a;
+  --border: #1e293b;
 }
 
 @theme inline {
@@ -18,47 +18,52 @@
   --color-muted: var(--muted);
   --color-card: var(--card);
   --color-border: var(--border);
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, #22c55e 0%, #10b981 50%, #059669 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Selection styling */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #f8fafc;
 }
 
-.card-hover {
-  transition: all 0.3s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px -10px rgba(34, 197, 94, 0.15);
-}
-
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: #0f172a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: #334155;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--muted);
+  background: #475569;
+}
+
+/* Focus visible styles */
+:focus-visible {
+  outline: 2px solid rgba(99, 102, 241, 0.5);
+  outline-offset: 2px;
+}
+
+/* Prevent layout shift from scrollbar */
+html {
+  overflow-y: scroll;
 }
