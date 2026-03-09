@@ -1,0 +1,3 @@
+:HL["/practical-ai-stack/_next/static/chunks/f1c9c8e93bd9bac2.css","style"]
+:HL["/practical-ai-stack/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"buildId":"6h1dBcprCMXpJKUs4EdLf","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"best-tools","paramType":null,"paramKey":"best-tools","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
